@@ -2,8 +2,13 @@ const pool = require("../db");
 
 const service = {
   //여러개 검색
-  findAll: async function () {
-    let [rows, result] = await pool.query("select * from board"); //배열 구조분해
+  findAll: async function (page) {
+    // 1-> 0 , 2 -> 10, 3 -> 20
+    const offset = (page - 1) * 10;
+    let [rows, result] = await pool.query(
+      "select * from board order by id limit 10 offset ?",
+      [offset],
+    ); //배열 구조분해
     console.log(rows);
     return rows;
   },
@@ -48,6 +53,10 @@ const service = {
     let rows = await pool.query("delete from board where id = ?", [id]);
     console.log(rows);
     return rows;
+  },
+  totalCount: async function () {
+    let [rows, result] = await pool.query("select count(*) as cnt from board");
+    return rows[0]; //[{"cut":384}] 배열의 첫번째 값만 들고오겠습니다.
   },
 };
 

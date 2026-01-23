@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", Arial, sans-serif;
+  background-color: #f4f6f9;
+  padding: 40px;
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+/* 게시판 등록폼 */
+.board-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+}
+.board-form input,
+.board-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+.board-form textarea {
+  height: 90px;
+}
+.board-form input:focus,
+.board-form textarea:focus {
+  outline: none;
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.15);
+}
+.board-form button {
+  background: linear-gradient(135deg, #4f7cff, #6a8dff);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.board-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 124, 255, 0.4);
+}
+/* 게시판 테이블 */
+.board-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.board-table thead {
+  background: #4f7cff;
+  color: #fff;
+}
+.board-table th,
+.board-table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+.board-table td.content {
+  text-align: left;
+}
+.board-table tbody tr:hover {
+  background-color: #f2f6ff;
+}
+.board-table tbody td {
+  border-bottom: 1px solid #eee;
+}
+/* 페이징 */
+.board-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 6px;
+}
+.board-pagination button {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.board-pagination button:hover {
+  background: #f0f4ff;
+  border-color: #4f7cff;
+}
+.board-pagination button.active {
+  background: #4f7cff;
+  color: #fff;
+  border-color: #4f7cff;
+  font-weight: bold;
+}
+.board-pagination button.disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}

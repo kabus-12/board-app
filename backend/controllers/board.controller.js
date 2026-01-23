@@ -5,7 +5,9 @@ const service = require("../services/board.services");
 
 const ctrl = {
   list: async (req, res) => {
-    const rows = await service.findAll();
+    const page = req.params.page; //host:3000/pg/:page/search/:keyword
+    req.params.keyword;
+    const rows = await service.findAll(page);
     res.send(rows);
   },
   create: async (req, res) => {
@@ -43,6 +45,11 @@ const ctrl = {
     } else {
       res.json('{"delete":"NG"}');
     }
+  },
+  //전체건수
+  totalCount: async (req, res) => {
+    const result = await service.totalCount();
+    res.send(result);
   },
 };
 

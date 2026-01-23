@@ -2,8 +2,42 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>프론트앤드</title>
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <h2>게시판</h2>
+<body>
+
+  <h2>게시글 등록</h2>
+
+<div class="board-form">
+  <input type="text" id="title" placeholder="제목을 입력하세요">
+  <textarea id="content" placeholder="내용을 입력하세요"></textarea>
+  <input type="text" id="writer" placeholder="작성자를 입력하세요">
+  <button id="add">등록</button>
+</div>
+
+  <h2>게시판</h2>
+
+  <div class="board-table">
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>작성자</th>
+        <th>작성일</th>
+      </tr>
+    </thead>
+    <tbody id="boardBody">
+      <!-- 게시글이 추가됨 -->
+    </tbody>
+  </table>
+  <div class="board-pagination">
+  </div>
+
+    <script type="module" src="js/board.js"></script>
+  </body>
 </html>
